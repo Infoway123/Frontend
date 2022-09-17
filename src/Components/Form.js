@@ -123,14 +123,7 @@ export default function Form() {
     //console.log(this.description)
 }*/
 
-const handleGet = (event)=>{
-    axios.get('http://localhost:3000/users/fetchdata',{
-        headers:{
-        authorization:" Bearer "+localStorage.token
-    }})
-.then(response=>console.log(response.data)) 
-.catch((error)=>(console.log(error)))
-}
+
    
 const handleSubmit = (event)=>{
         alert(User)
@@ -210,7 +203,7 @@ console.log(event);*/
           <button type="submit">Add</button>
           
         </form>
-        <button onClick={handleGet} >Submit</button>
+       
       </div>
   )
 }

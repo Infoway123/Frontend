@@ -7,6 +7,8 @@ export default function ProjectForm() {
         creatorid:"",
         description:"",
         requirements:"",
+        projectDoc:"",
+        technologies:"",
         payment:"",
         status:"",
         leaderid:"",
@@ -58,6 +60,12 @@ export default function ProjectForm() {
             Requirements:
             <input type="text" name="requirements" onChange={handleChange} value={Project.requirements} />
             <br></br>
+            Project Documents:
+            <input type="text" name="projectDoc" onChange={handleChange} value={Project.projectDoc} />
+            <br></br>
+            Technologies Requirements:
+            <input type="text" name="technologies" onChange={handleChange} value={Project.technologies} />
+            <br></br>
             Payment:
             <input type="text" name="payment" onChange={handleChange} value={Project.payment} />
             <br></br>
@@ -68,7 +76,7 @@ export default function ProjectForm() {
             <input type="text" name="leaderid" onChange={handleChange} value={Project.leaderid} />
             <br></br>
             Team Users:
-            <input type="text" name="teamuserd" onChange={handleChange} value={Project.teamusers} />
+            <input type="text" name="teamusers" onChange={handleChange} value={Project.teamusers} />
             <br></br> 
           <button type="submit">Add</button>
           
