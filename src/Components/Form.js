@@ -3,17 +3,17 @@ import { useState } from 'react'
 import axios from 'axios'
 export default function Form() {
     const [User,setUser]=useState({
-        userid:"",
         name:"",
         surname:"",
-      email:"",
-      password:"",
-      mobile:"",
-      projects:"",
-      friends:"",
-      skillsets:"",
-      experience:"",
-      description:""
+        email:"",
+        password:"",
+        mobile:"",
+        projects:"",
+        friends:"",
+        skillsets:"",
+        experience:"",
+        description:"",
+        
     })
     const handleChange = (event)=>
     {//event.persist();
@@ -167,9 +167,9 @@ console.log(event);*/
   return (
     <div>
         <form onSubmit={handleSubmit}>
-        User Id:
+        {/* User Id:
             <input type="text" name="userid" onChange={handleChange} value={User.userid} />
-            <br></br>
+            <br></br> */}
             Person Name:
             <input type="text" name="name" onChange={handleChange} value={User.name} />
             <br></br>

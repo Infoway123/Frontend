@@ -5,7 +5,9 @@ import axios from 'axios'
 export default function Login() {
     const [User, setUser] = useState({
         email:"",
-        password:""
+        password:"",
+        rememberMe:false,
+        admin:false
     })
     const handleChange = (event)=>
    {
@@ -15,7 +17,33 @@ export default function Login() {
     
     })
     )
+    console.log(User)
     console.log(event.target.value)
+}
+   const handleRememberMe=(event)=>{
+     console.log(event.target)
+     setUser((User)=>({
+        ...User,
+         rememberMe:!User.rememberMe
+    
+    })
+    )
+       }
+
+       const handleAdmin=(event)=>{
+        console.log(event.target)
+        setUser((User)=>({
+           ...User,
+            admin:!User.admin
+       
+       })
+       )
+          }
+
+
+
+const handleLogout = ()=>{
+    localStorage.removeItem("token")
 }
 
 const handleSubmit = (event)=>{
@@ -36,6 +64,8 @@ const handleSubmit = (event)=>{
 })
 .catch((err)=>{console.log("Error")})
 }
+
+ 
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -45,8 +75,11 @@ const handleSubmit = (event)=>{
         User Password:
             <input type="text" name="password" onChange={handleChange} value={User.password} />
             <br></br>
+            <input type="checkbox" name="rememberMe" onChange={handleRememberMe} value={User.rememberMe}></input>Remember Me<br></br>
+            <input type="checkbox" name="admin" onChange={handleAdmin} value={User.admin}></input>Admin<br></br>
             <button type="submit">Login</button>
             </form>
+            <button onClick={handleLogout}>Logout</button>
         </div>
     )
 }
